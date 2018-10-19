@@ -247,10 +247,12 @@ public final class DefaultTrace implements Trace, TraceRootSupport {
     }
 
     private void logSpan(SpanEvent spanEvent) {
+        logger.info("span event api name = " + spanEvent.getApiName());
         this.storage.store(spanEvent);
     }
 
     private void logSpan(Span span) {
+        logger.info("span api name = " + span.getApiName());
         this.storage.store(span);
     }
 
