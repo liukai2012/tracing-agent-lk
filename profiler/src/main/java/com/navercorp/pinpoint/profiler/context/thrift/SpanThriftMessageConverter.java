@@ -118,6 +118,7 @@ public class SpanThriftMessageConverter implements MessageConverter<TBase<?, ?>>
         tSpan.setAcceptorHost(span.getAcceptorHost());
 
         tSpan.setApiId(span.getApiId());
+        tSpan.setApiName(span.getApiName());
 
         final IntStringValue exceptionInfo = span.getExceptionInfo();
         if (exceptionInfo != null) {

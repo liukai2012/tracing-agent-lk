@@ -73,6 +73,11 @@ public class DefaultSpanRecorder extends AbstractRecorder implements SpanRecorde
     public void recordApiId(int apiId) {
         setApiId0(apiId);
     }
+    
+    @Override
+    public void setApiName0(String apiName) {
+        span.setApiName(apiName);
+    }
 
     void setApiId0(final int apiId) {
         span.setApiId(apiId);

@@ -79,6 +79,7 @@ public abstract class AbstractRecorder {
         }
         if (methodDescriptor.getApiId() == 0) {
             recordAttribute(AnnotationKey.API, methodDescriptor.getFullName());
+            recordAttribute(AnnotationKey.API_NAME, methodDescriptor.getFullName());
         } else {
             setApiId0(methodDescriptor.getApiId());
         }
@@ -105,6 +106,7 @@ public abstract class AbstractRecorder {
     }
 
     abstract void setApiId0(final int apiId);
+    abstract void setApiName0(final String apiName);
 
     private void recordArgs(Object[] args, int start, int end) {
         if (args != null) {

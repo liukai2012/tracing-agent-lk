@@ -30,8 +30,7 @@ public class SimpleCache<T> {
     // zero means not exist.
     private final AtomicInteger idGen;
     private final ConcurrentMap<T, Result> cache;
-
-
+   
     public SimpleCache() {
         this(1024, 1);
     }
@@ -70,5 +69,4 @@ public class SimpleCache<T> {
         }
         return new Result(true, newId);
     }
-
 }

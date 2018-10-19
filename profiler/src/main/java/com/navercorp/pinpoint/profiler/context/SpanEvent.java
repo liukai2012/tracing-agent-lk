@@ -48,6 +48,7 @@ public class SpanEvent extends DefaultFrameAttachment {
     private String destinationId; // optional
 
     private int apiId; // optional
+    private String apiName; // optional
     private IntStringValue exceptionInfo; // optional
 
     private AsyncId asyncIdObject;
@@ -197,6 +198,14 @@ public class SpanEvent extends DefaultFrameAttachment {
     public void setApiId(int apiId) {
         this.apiId = apiId;
     }
+    
+    public String getApiName() {
+        return apiName;
+    }
+
+    public void setApiName(String apiName) {
+        this.apiName = apiName;
+    }
 
     public IntStringValue getExceptionInfo() {
         return exceptionInfo;
@@ -238,6 +247,7 @@ public class SpanEvent extends DefaultFrameAttachment {
                 ", nextSpanId=" + nextSpanId +
                 ", destinationId='" + destinationId + '\'' +
                 ", apiId=" + apiId +
+                ", apiName=" + apiName +
                 ", exceptionInfo=" + exceptionInfo +
                 ", localAsyncId=" + localAsyncId +
                 "} ";

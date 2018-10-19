@@ -272,4 +272,9 @@ public class WrappedSpanEventRecorder extends AbstractRecorder implements SpanEv
         }
         return nextAsyncId;
     }
+
+    @Override
+    void setApiName0(String apiName) {
+        spanEvent.setApiName(apiName);
+    }
 }
