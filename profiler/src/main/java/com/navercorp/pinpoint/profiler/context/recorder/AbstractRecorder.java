@@ -79,7 +79,7 @@ public abstract class AbstractRecorder {
         }
         String fullName = methodDescriptor.getFullName();
         if (fullName != null) {
-            fullName = fullName.split("\\\\(|:|\\\\$")[0];
+            fullName = fullName.split("\\(|:|\\$")[0];
         }
         if (methodDescriptor.getApiId() == 0) {
             recordAttribute(AnnotationKey.API, fullName);
