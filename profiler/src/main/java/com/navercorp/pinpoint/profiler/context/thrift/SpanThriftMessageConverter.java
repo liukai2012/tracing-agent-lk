@@ -39,6 +39,8 @@ import com.navercorp.pinpoint.thrift.dto.TSpan;
 import com.navercorp.pinpoint.thrift.dto.TSpanChunk;
 import com.navercorp.pinpoint.thrift.dto.TSpanEvent;
 import org.apache.thrift.TBase;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -211,13 +213,13 @@ public class SpanThriftMessageConverter implements MessageConverter<TBase<?, ?>>
 
          tSpanEvent.setDestinationId(spanEvent.getDestinationId());
          tSpanEvent.setApiId(spanEvent.getApiId());
+         tSpanEvent.setApiName(spanEvent.getApiName());
 
         final IntStringValue exceptionInfo = spanEvent.getExceptionInfo();
         if (exceptionInfo != null) {
             TIntStringValue tIntStringValue = buildTIntStringValue(exceptionInfo);
             tSpanEvent.setExceptionInfo(tIntStringValue);
         }
-
 
         final AsyncId asyncIdObject = spanEvent.getAsyncIdObject();
         if (asyncIdObject != null) {

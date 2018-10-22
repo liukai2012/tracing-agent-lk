@@ -223,6 +223,7 @@ public class Span extends DefaultFrameAttachment {
                 ", acceptorHost='" + acceptorHost + '\'' +
                 ", apiId=" + apiId +
                 ", exceptionInfo=" + exceptionInfo +
+                ", apiName=" + apiName +
                 "} " + super.toString();
     }
 }

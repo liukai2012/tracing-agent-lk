@@ -18,6 +18,7 @@ package com.navercorp.pinpoint.profiler.sender;
 
 import com.navercorp.pinpoint.common.annotations.VisibleForTesting;
 import com.navercorp.pinpoint.common.util.Assert;
+import com.navercorp.pinpoint.profiler.context.Span;
 import com.navercorp.pinpoint.profiler.context.thrift.MessageConverter;
 import com.navercorp.pinpoint.thrift.io.HeaderTBaseSerializer;
 import com.navercorp.pinpoint.thrift.io.HeaderTBaseSerializerFactory;
@@ -69,6 +70,7 @@ public class ThriftUdpMessageSerializer implements MessageSerializer<ByteMessage
 
     public ByteMessage serialize(TBase<?, ?> message) {
         final TBase<?, ?> dto = message;
+       
         // do not copy bytes because it's single threaded
         final byte[] internalBufferData = serialize(this.serializer, dto);
         if (internalBufferData == null) {
